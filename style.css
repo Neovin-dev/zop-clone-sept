@@ -122,7 +122,7 @@ li {
 .collection-content {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .st-collection-filter-wrapper {
