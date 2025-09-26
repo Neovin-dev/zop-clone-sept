@@ -379,16 +379,16 @@ li {
 .product-image-container-curve-round-bag {
     z-index: 10;
     position: absolute;
-    bottom: 5%;
+    bottom: 8%;
     max-width: 18%;;
-    left: 70%
+    left: 75%;
 }
 
 .product-image-container-curve svg{
     position: absolute;
     width: 45%;
-    top: 67%;
-    right: -6px;
+    top: 58%;
+    right: 0px;
 }
 
 .description {
@@ -483,6 +483,186 @@ li {
   background-color: #f9f9f9;
 }
 
+.trex-wrapper{
+    width: 100%;
+}
+
+.rotate{
+    transition: transform 0.4s ease-out;
+    transform: rotate(180deg);
+}
+
+.scroll-off::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-off {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* =================================== */
+/* == MOBILE OVERLAYS & CONTROLS CSS == */
+/* =================================== */
+
+/* Mobile Controls Bar (Sort & Filters buttons) */
+.mobile-controls {
+    display: none;
+    position: sticky;
+    top: 40px;
+    background-color: #f9f9f9;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    gap: 10px;
+}
+
+.mobile-control-btn {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Overlay Backdrop (the dark background) */
+#overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#overlay-backdrop:not(.inactive) {
+    opacity: 1;
+}
+
+/* Common Overlay Styles */
+.mobile-overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #f0f0f0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Mobile Filter Overlay (Left Sidebar) */
+#mobile-filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85%;
+    max-width: 320px;
+    height: 100%;
+    background-color: #f0f0f0;
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+#mobile-filter-overlay:not(.inactive) {
+    transform: translateX(0);
+}
+#mobile-filter-content {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+/* Ensure the moved filter content looks good inside the overlay */
+#mobile-filter-content #sidebar-filters {
+    border: none;
+    padding: 10px;
+}
+
+/* Mobile Sort Overlay (Bottom Drawer) */
+#mobile-sort-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    z-index: 1001;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+#mobile-sort-overlay:not(.inactive) {
+    transform: translateY(0);
+}
+/* Ensure the moved sort list looks good */
+#mobile-sort-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#mobile-sort-overlay ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+#mobile-sort-overlay ul li:last-child {
+    border-bottom: none;
+}
+
+/* Media Query to switch between Desktop and Mobile views */
+@media (max-width: 989px) {
+    /* Show mobile controls */
+    .mobile-controls {
+        display: flex;
+    }
+    
+    /* Hide desktop filter sidebar and sort dropdown */
+    #st-collection-filter-control {
+        display: none;
+    }
+    .sort-dropdown-icon {
+        display: none;
+    }
+
+    /* Adjust main layout for mobile */
+    .collection-content {
+        flex-direction: column;
+    }
+    #product-grid-wrapper {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+/* Utility class to hide elements */
+.inactive {
+    display: none !important;
+    visibility: hidden;
+}
+
+
+
 @media (max-width: 822px){
     .navigation-header-bar {
         display: none;
@@ -507,8 +687,16 @@ li {
 }
 
 @media (max-width: 432px){
+    .main-header-wrapper {
+        position: static;
+        top: 0px;
+    }
+    .section-padding {
+        padding-top: 0;
+    }
+
     .st-search-box-cotainer{
-        max-width: 600px;
+        max-width: 400px;
     }
 
     .product-card-grid {
@@ -523,24 +711,37 @@ li {
         padding-right: 5px;
         padding-left: 5px
     }
+
+    #sort-items-list {
+        min-width: 90px;
+        max-width: 100px;
+    }
+
+    .st-sort-box-box::after {
+        display: none;
+    }
 }
 
-.trex-wrapper{
-    width: 100%;
-}
+@media (max-width: 392px){
+    .section-padding {
+        padding-top: 0;
+    }
+    .st-search-box-cotainer{
+        max-width: 380px;
+    }
+    .st-product-wrap {
+        min-width: 145px;
+        max-width: 150px;
+    }
 
-.rotate{
-    transition: transform 0.4s ease-out;
-    transform: rotate(180deg);
-}
+    .st-sort-box {
+        padding: 0;
+        padding-right: 5px;
+    }
 
-.scroll-off::-webkit-scrollbar {
-  display: none;
+    .product-image-container-curve svg{
+        width: 45%;
+        top: 55%;
+        right: 1px;
+    }
 }
-
-.scroll-off {
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-

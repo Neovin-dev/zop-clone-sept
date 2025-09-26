@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const relevance = document.querySelector(".Relevance");
     const discountH = document.querySelector(".Discounthtl");
     const pricelth= document.querySelector(".Pricelth");
-    const pricehtl = document.querySelector(".Pricehtl");
+    const pricehtl = document.querySelector(".Pricehtl"); 
     // const newestf = document.querySelector(".Newestf");
     // const Oldestf = document.querySelector(".Oldestf");
     const az = document.querySelector(".AZ");
@@ -512,7 +512,5 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollbarBrand.classList.toggle("inactive")
         rotateIcon2.classList.toggle("rotate");
     })
-    
-
 
 });

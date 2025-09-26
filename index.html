@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -99,6 +99,14 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div class="mobile-controls">
+                <button id="mobile-sort-btn" class="mobile-control-btn">
+                    <i class="fa-solid fa-arrow-up-wide-short"></i> Sort
+                </button>
+                <button id="mobile-filter-btn" class="mobile-control-btn">
+                    <i class="fa-solid fa-filter"></i> Filter
+                </button>
             </div>
     </header>
 
@@ -198,6 +206,34 @@
 
             </div>
         </div>
+    </div>
+
+    <div id="overlay-backdrop" class="inactive"></div>
+
+    <div id="mobile-filter-overlay" class="inactive">
+        <div class="mobile-overlay-header">
+            <span>Filters</span>
+            <button id="close-filter-btn" class="close-btn">✕</button>
+        </div>
+        <div id="mobile-filter-content">
+            </div>
+    </div>
+
+    <div id="mobile-sort-overlay" class="inactive">
+        <div class="mobile-overlay-header">
+            <span>Sort By</span>
+            <button id="close-sort-btn" class="close-btn">✕</button>
+            <ul>
+                <li class="options Relevance"><span class="">Relevance</span></li>
+                <li class="options Discounthtl"><span class="">Discount: High to Low</span></li>
+                <li class="options Pricelth"><span class="">Price: Low to High</span></li>
+                <li class="options Pricehtl"><span class="">Price: High to Low</span></li>
+                <li class="options AZ"><span class="">Alphabetically, A-Z</span></li>
+                <li class="options ZA"><span class="">Alphabetically, Z-A</span></li> 
+            </ul>
+        </div>
+        <div id="mobile-sort-content">
+            </div>
     </div>
 
     <script src="script2.js"></script>
