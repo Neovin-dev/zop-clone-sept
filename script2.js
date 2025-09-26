@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const body = document.getElementById('body');
 
     const closeButton = document.querySelector('.close');
+    const closeButtonfilter = document.getElementById('close-filter-btn');
+    const closeButtonsort = document.getElementById("close-sort-btn");
 
     const relevance = document.querySelector(".Relevance");
     const discountH = document.querySelector(".Discounthtl");
@@ -38,7 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let seachboxcontent = "";
 
     let rotateIcon1 = document.getElementById("rotating-icon-1");
-    let rotateIcon2 = document.getElementById("rotating-icon-2")
+    let rotateIcon2 = document.getElementById("rotating-icon-2");
+
+    let mobileSortButton = document.getElementById("mobile-sort-btn");
+
+    const relevanceMobile = document.getElementById("RelevanceMobile");
+    const discountHtlMobile = document.getElementById("DiscountHtLMobile");
+    const priceLthMobile = document.getElementById("PricelthMobile");
+    const priceHtlMobile = document.getElementById("PricehtlMobile");
+    const alphaAZMobile = document.getElementById("AlphazMobile");
+    const alphaZAMobile = document.getElementById("AlphzaMobile");
+    
+
 
     brandFetcher(brandUrl);
 
@@ -280,6 +293,14 @@ document.addEventListener("DOMContentLoaded", function () {
         searchContainer.classList.add('inactive');
     })
 
+    closeButtonsort.addEventListener('click', function(){
+        mobileOverlaySort.classList.add('inactive');
+    })
+
+    closeButtonfilter.addEventListener('click', function(){
+        mobileOverlayFilter.classList.add('inactive');
+    })
+
     searchIcon.addEventListener('click', function(){
         searchContainer.classList.toggle('inactive');
         body.classList.toggle('scroll-off');
@@ -329,6 +350,40 @@ document.addEventListener("DOMContentLoaded", function () {
     za.addEventListener('click', function(){
         productParser(`${url}?sortBy=title&order=desc`);
     })
+
+    relevanceMobile.addEventListener('click', function() {
+        productParser(url);
+        
+    });
+
+    discountHtlMobile.addEventListener('click', function() {
+        mobileOverlaySort.classList.add("inactive");
+        productParser(`${url}?sortBy=discountPercentage&order=desc`);
+        
+    });
+
+    priceLthMobile.addEventListener('click', function() {
+        productParser(`${url}?sortBy=price&order=asc`);
+        mobileOverlaySort.classList.add("inactive");
+        
+    });
+
+    priceHtlMobile.addEventListener('click', function() {
+        productParser(`${url}?sortBy=price&order=desc`);
+        mobileOverlaySort.classList.add("inactive");
+    });
+
+
+
+    alphaAZMobile.addEventListener('click', function() {
+        productParser(`${url}?sortBy=title&order=asc`);
+        mobileOverlaySort.classList.add("inactive");
+    });
+
+    alphaZAMobile.addEventListener('click', function() {
+        productParser(`${url}?sortBy=title&order=desc`);
+        mobileOverlaySort.classList.add("inactive");
+    });
 
     // let categorySortUrl = "https://dummyjson.com/products/category/smartphones";
 
@@ -511,6 +566,20 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleBrand.addEventListener('click', function(){
         scrollbarBrand.classList.toggle("inactive")
         rotateIcon2.classList.toggle("rotate");
+    })
+
+    let mobileOverlaySort = document.getElementById("mobile-sort-overlay");
+
+    mobileSortButton.addEventListener('click', function(){
+        mobileOverlaySort.classList.toggle("inactive");
+    })
+
+
+    let mobileFilterButton = document.getElementById("mobile-filter-btn");
+    let mobileOverlayFilter = document.getElementById("mobile-filter-overlay");
+
+    mobileFilterButton.addEventListener('click', function(){
+        mobileOverlayFilter.classList.toggle("inactive");
     })
 
 });

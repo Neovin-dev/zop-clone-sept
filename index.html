@@ -211,25 +211,31 @@
     <div id="overlay-backdrop" class="inactive"></div>
 
     <div id="mobile-filter-overlay" class="inactive">
-        <div class="mobile-overlay-header">
-            <span>Filters</span>
-            <button id="close-filter-btn" class="close-btn">✕</button>
+        <div class="mobile-sort-header">
+                <span>Filters</span>
+                <button id="close-filter-btn" class="close-btn">✕</button>
+        </div>
         </div>
         <div id="mobile-filter-content">
-            </div>
+
+        </div>
     </div>
 
     <div id="mobile-sort-overlay" class="inactive">
         <div class="mobile-overlay-header">
-            <span>Sort By</span>
-            <button id="close-sort-btn" class="close-btn">✕</button>
+            <div class="mobile-sort-header">
+                <button id="close-sort-btn" class="close-btn">✕</button>
+                <span>Sort By</span>
+                <span id="dot">.</span>
+                
+            </div>
             <ul>
-                <li class="options Relevance"><span class="">Relevance</span></li>
-                <li class="options Discounthtl"><span class="">Discount: High to Low</span></li>
-                <li class="options Pricelth"><span class="">Price: Low to High</span></li>
-                <li class="options Pricehtl"><span class="">Price: High to Low</span></li>
-                <li class="options AZ"><span class="">Alphabetically, A-Z</span></li>
-                <li class="options ZA"><span class="">Alphabetically, Z-A</span></li> 
+                <li id="RelevanceMobile" class="options Relevance"><span class="">Relevance</span></li>
+                <li id="DiscountHtLMobile" class="options Discounthtl"><span class="">Discount: High to Low</span></li>
+                <li id="PricelthMobile" class="options Pricelth"><span class="">Price: Low to High</span></li>
+                <li id="PricehtlMobile" class="options Pricehtl"><span class="">Price: High to Low</span></li>
+                <li id="AlphazMobile" class="options AZ"><span class="">Alphabetically, A-Z</span></li>
+                <li id="AlphzaMobile" class="options ZA"><span class="">Alphabetically, Z-A</span></li> 
             </ul>
         </div>
         <div id="mobile-sort-content">
