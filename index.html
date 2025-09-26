@@ -212,9 +212,38 @@
 
     <div id="mobile-filter-overlay" class="inactive">
         <div class="mobile-sort-header">
-                <span>Filters</span>
-                <button id="close-filter-btn" class="close-btn">✕</button>
+            <span>Filters</span>
+            <button id="close-filter-btn" class="close-btn">✕</button>
         </div>
+            <div class="filter-categories-mobile">
+                <div class="filter-categories">
+                    <div id="categoryListnerMobile" class="filter-category-wrapper">
+                        <div class="filter-category-header">
+                                <span class="filter-heading-category">Category
+                                </span>
+                                <span>
+                                    <img id="rotating-icon-3" src="img/arrow_drop_up_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                                </span>
+                        </div>
+                    </div>
+                    <div id="scrollable-side-bar-category-mobile" class="filter-categories scrollable-container inactive">
+                    </div>
+                </div>
+                <div class="filter-categories">
+                        <div id="brandListnerMobile" class="filter-category-wrapper">
+                            <div class="filter-category-header">
+                                    <span class="filter-heading-category">Brand
+                                    </span>
+                                    <span>
+                                        <img id="rotating-icon-4" src="img/arrow_drop_up_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                                    </span>
+                            </div>
+                        </div>
+                        <div id="scrollable-side-bar-brand-mobile" class="filter-categories scrollable-container inactive">
+                        </div>
+                    </div>
+                </div>
+
         </div>
         <div id="mobile-filter-content">
 
@@ -227,7 +256,6 @@
                 <button id="close-sort-btn" class="close-btn">✕</button>
                 <span>Sort By</span>
                 <span id="dot">.</span>
-                
             </div>
             <ul>
                 <li id="RelevanceMobile" class="options Relevance"><span class="">Relevance</span></li>
