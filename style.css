@@ -806,7 +806,7 @@ li {
     }
 }
 
-@media (max-width: 460px){
+@media (max-width: 463px){
     .main-header-wrapper {
         position: static;
         top: 0px;
