@@ -94,7 +94,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 categoryHTML.classList.add('list-items-category');
                 console.log("category name", category.name);
                 categoryHTML.innerHTML = `
-                    <li><input type="checkbox" name="${category.name}" id="${category.name}"><label for="${category.name}" class="custom-checkbox">${category.name}</label></li>
+                    <li>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="${category.name}" id="${category.name}">
+                            <span class="checkmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                </span>
+                            ${category.name}
+                        </label>
+                    </li>
                 `;
                 
                 categoryCard.appendChild(categoryHTML);
@@ -130,7 +140,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 categoryMobileHTML.classList.add('list-items-category');
                 console.log("category name", category.name);
                 categoryMobileHTML.innerHTML = `
-                    <li><input type="checkbox" name="${category.name}" id="${category.name}"><label for="${category.name}">${category.name}</label></li>
+                    <li>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="${category.name}" id="${category.name}">
+                            <span class="checkmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                </span>
+                            ${category.name}
+                        </label>
+                    </li>
                 `;
                 
                 categoryCardMobile.appendChild(categoryMobileHTML);
@@ -175,7 +195,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 brandHTML.classList.add('list-items-category');
 
                 brandHTML.innerHTML = `
-                    <li><input type="checkbox" name="${brand}" id="${brand}"><label for="${brand}">${brand}</label></li>
+                    <li>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="${brand}" id="${brand}">
+                            <span class="checkmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                </span>
+                            ${brand}
+                        </label>
+                    </li>
                 `;
                 
                 brandCard.appendChild(brandHTML);
@@ -217,7 +247,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 brandHTML.classList.add('list-items-category');
 
                 brandHTML.innerHTML = `
-                    <li><input type="checkbox" name="${brand}" id="${brand}"><label for="${brand}">${brand}</label></li>
+                    <li>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="${brand}" id="${brand}">
+                            <span class="checkmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                </span>
+                            ${brand}
+                        </label>
+                    </li>
                 `;
                 
                 brandCardMobile.appendChild(brandHTML);
